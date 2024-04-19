@@ -1,0 +1,37 @@
+'tsv.schnait:Columns.Two':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Zweispaltiger Inhalt'
+    icon: 'icon-columns'
+    group: 'structure'
+    position: 10
+    inspector:
+      groups:
+        columnSettings:
+          label: 'Spalten Einstellungen'
+          icon: 'icon-columns'
+          position: 10
+  properties:
+    layout:
+      type: string
+      defaultValue: '6-6'
+      ui:
+        label: 'Spaltenaufteilung'
+        reloadIfChanged: true
+        inspector:
+          group: 'columnSettings'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '6-6':
+                label: '50% / 50%'
+              '8-4':
+                label: '66% / 33%'
+              '4-8':
+                label: '33% / 66%'
+  childNodes:
+    column0:
+      type: 'Neos.Neos:ContentCollection'
+    column1:
+      type: 'Neos.Neos:ContentCollection'

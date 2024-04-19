@@ -1,0 +1,10 @@
+##
+# "Text" element
+#
+prototype(tsv.schnait:Text) < prototype(Neos.Neos:ContentComponent) {
+    content = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`<tsv.schnait:Presentation.Text {...props} />`
+}

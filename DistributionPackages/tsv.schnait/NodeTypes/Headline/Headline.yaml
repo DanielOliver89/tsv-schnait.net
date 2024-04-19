@@ -1,0 +1,74 @@
+'tsv.schnait:Headline':
+  superTypes:
+    'Neos.Neos:Content': true
+    #'Neos.NodeTypes.BaseMixins:TitleMixin': true
+  ui:
+    label: 'Überschrift'
+    icon: header
+    position: 1
+    inspector:
+      groups:
+        settings:
+          label: i18n
+          icon: header
+  properties:
+    title:
+      options:
+        preset: 'neosdemo.text.headline'
+    tagName:
+      type: string
+      defaultValue: 'h1'
+      ui:
+        label: 'Größe'
+        reloadIfChanged: true
+        inspector:
+          group: settings
+          position: 10
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              h1:
+                label: h1
+              h2:
+                label: h2
+              h3:
+                label: h3
+              h4:
+                label: h4
+              h5:
+                label: h5
+    ankerid:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'AnkerID'
+        reloadIfChanged: true
+        inspector:
+          group: 'settings'
+          position: 20
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'Bitte Anker ID wählen...'
+            values:
+              '':
+                label: ''
+              a:
+                label: 'a'
+              b:
+                label: 'b'
+              c:
+                label: 'c'
+              d:
+                label: 'd'
+              e:
+                label: 'e'
+              f:
+                label: 'f'
+              g:
+                label: 'g'
+              h:
+                label: 'h'
+              i:
+                label: 'i'
+              j:
+                label: 'j'

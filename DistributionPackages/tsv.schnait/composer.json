@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-site",
+    "require": {
+        "neos/neos": "*"
+    },
+    "name": "tsv/schnait",
+    "autoload": {
+        "psr-4": {
+            "tsv\\schnait\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "tsv.schnait"
+        }
+    }
+}

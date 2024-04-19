@@ -1,0 +1,1 @@
+prototype(tsv.schnait:Document.Page) < prototype(tsv.schnait:Document.AbstractPage)

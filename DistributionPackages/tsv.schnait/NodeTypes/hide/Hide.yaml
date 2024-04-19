@@ -1,0 +1,6 @@
+'Neos.Demo:Content.Text':
+  ui:
+    group: 'hidden'
+'Neos.Demo:Content.Headline':
+  ui:
+    group: 'hidden'

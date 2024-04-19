@@ -1,0 +1,12 @@
+'tsv.schnait:Text':
+  superTypes:
+    'Neos.Neos:Content': true
+    #'Neos.NodeTypes.BaseMixins:TextMixin': true
+  ui:
+    label: 'Text'
+    icon: file-text
+    position: 2
+  properties:
+    text:
+      options:
+        preset: ''

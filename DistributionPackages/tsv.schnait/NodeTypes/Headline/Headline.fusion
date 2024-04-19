@@ -1,0 +1,13 @@
+##
+# "Headline" element
+#
+prototype(tsv.schnait:Headline) < prototype(Neos.Neos:ContentComponent) {
+    tagName = ${q(node).property('tagName')}
+    tagStyle = ${q(node).property('tagStyle')}
+    content = Neos.Neos:Editable {
+        property = 'title'
+        block = false
+    }
+
+    renderer = afx`<tsv.schnait:Presentation.Headline {...props} />`
+}

@@ -1,0 +1,2 @@
+Typo3.Neos.NodeTypes:Text --> tsv.schnait:Text
+Typo3.Neos.NodeTypes:Headline --> tsv.schnait:Headline
