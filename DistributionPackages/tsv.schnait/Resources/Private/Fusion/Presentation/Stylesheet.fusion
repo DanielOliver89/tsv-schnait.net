@@ -1,0 +1,11 @@
+/**
+ * Stylesheets of the page to be included in the header
+ */
+prototype(tsv.schnait:Presentation.Stylesheet) < prototype(Neos.Fusion:Component) {
+    renderer = afx`
+        <link rel="stylesheet" href={StaticResource.uri('tsv.schnait', 'Public/Styles/bootstrap.css')} />
+        <link rel="stylesheet" href={StaticResource.uri('tsv.schnait', 'Public/Styles/jquery.fancybox.css')} />
+        <link rel="stylesheet" href={StaticResource.uri('tsv.schnait', 'Public/Styles/Style.css')} />
+        
+    `
+}
