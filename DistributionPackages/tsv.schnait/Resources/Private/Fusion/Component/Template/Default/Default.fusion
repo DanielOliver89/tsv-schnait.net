@@ -1,18 +1,36 @@
 prototype(tsv.schnait:Component.Template.Default) < prototype(Neos.Fusion:Component) {
   # Property API
   menu = ''
+  #menu = tsv.schnait:MainMenu
   content = ''
 
   # Template
   renderer = afx`
-    <!-- change to your needs -->
     <header>
-      Header
-      <nav>{props.menu}</nav>
+      <!--Header-->
     </header>
     <main id="main">
-      {props.content}
+      <div id="wrapper">
+        <div class="navigation">
+          <!--nav></nav-->
+          {props.menu}
+          <!--tsv.schnait:MainMenu /-->
+          <!--tsv.schnait:TestMenuOutput /-->
+        </div>
+        <div class="content">
+          {props.content}
+        </div>
+        <footer class="footer">
+          <div class="row">
+            <div class="col-sm-6" id="footerLinks">
+                <a href="/impressum.html">Impressum</a>
+            </div>
+            <div class="col-sm-6" id="footerRechts">
+                <a href="/">© Turn- und Sportverein Schnait 1911 e.V.</a>
+            </div>
+          </div>
+        </footer>
+      </div>
     </main>
-    <footer>Footer</footer>
   `
 }

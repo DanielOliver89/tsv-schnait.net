@@ -14,12 +14,24 @@ prototype(tsv.schnait:Document.AbstractPage) < prototype(Neos.Neos:Page) {
 
     # Add stylesheets to your page
      stylesheets.site = afx`
-        <link rel="stylesheet" href={StaticResource.uri('tsv.schnait', 'Public/site.css')} />
+        <!--link rel="stylesheet" href={StaticResource.uri('tsv.schnait', 'Public/site.css')} /-->
+        <link rel="stylesheet" href={StaticResource.uri('tsv.schnait', 'Public/Styles/bootstrap.css')} />
+        <link rel="stylesheet" href={StaticResource.uri('tsv.schnait', 'Public/Styles/jquery.fancybox.css')} />
+        <link rel="stylesheet" href={StaticResource.uri('tsv.schnait', 'Public/Styles/Style.css')} />
+        <link rel="stylesheet" href={StaticResource.uri('tsv.schnait', 'Public/Styles/Backend.css')} />
+        <link rel="icon" href={StaticResource.uri('tsv.schnait', 'Public/Images/favicon.gif')} />
     `
 
     # Add header javascripts to your page
     javascripts.site = afx`
-        <link type="text/javascript" defer href={StaticResource.uri('tsv.schnait', 'Public/site.js')} />
+        <!--link type="text/javascript" defer href={StaticResource.uri('tsv.schnait', 'Public/site.js')} /-->
+        <script defer src={StaticResource.uri('tsv.schnait', 'Public/Scripts/jquery-1.10.2.js')}></script>
+        <script defer src={StaticResource.uri('tsv.schnait', 'Public/Scripts/jquery.fancybox.js')}></script>
+        <script defer src={StaticResource.uri('tsv.schnait', 'Public/Scripts/jquery.mousewheel-3.0.6.pack.js')}></script>
+        <script defer src={StaticResource.uri('tsv.schnait', 'Public/Scripts/jquery.fancybox-buttons.js')}></script>
+        <script defer src={StaticResource.uri('tsv.schnait', 'Public/Scripts/jquery.fancybox-thumbs.js')}></script>
+        <script defer src={StaticResource.uri('tsv.schnait', 'Public/Scripts/bootstrap.js')}></script>
+        <script defer src={StaticResource.uri('tsv.schnait', 'Public/Scripts/tsv.js')}></script>
     `
   }
 

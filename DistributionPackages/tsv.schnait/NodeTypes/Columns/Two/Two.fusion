@@ -1,7 +1,8 @@
-##
-# "TwoColumn" element
-#
 prototype(tsv.schnait:Columns.Two) < prototype(Neos.Neos:ContentComponent) {
+    layout = ${q(node).property('layout')}
+    columnClass0 = ${String.split(this.layout, '-')[0]}
+    columnClass1 = ${String.split(this.layout, '-')[1]}
+
     column0 = Neos.Neos:ContentCollection {
         nodePath = 'column0'
     }
@@ -11,18 +12,13 @@ prototype(tsv.schnait:Columns.Two) < prototype(Neos.Neos:ContentComponent) {
     }
 
     renderer = afx`
-        <tsv.schnait:Presentation.Columns.Two>
-            {props.column0}
-            {props.column1}
-        </tsv.schnait:Presentation.Columns.Two>
-    `
-}
-
-prototype(tsv.schnait:Columns.Two.RawContentMode) < prototype(Neos.Neos:ContentComponent) {
-    renderer = afx`
-        <div style="display:grid; grid-template-columns: 1fr 1fr; grid-gap: 16px;">
-            <Neos.Neos:RawContent.Node @context.node={q(node).children('column0').get(0)} />
-            <Neos.Neos:RawContent.Node @context.node={q(node).children('column1').get(0)} />
+        <div class="row">
+            <div class={"col-md-" + props.columnClass0}>
+                {props.column0}
+            </div>
+            <div class={"col-md-" + props.columnClass1}>
+                {props.column1}
+            </div>
         </div>
     `
 }

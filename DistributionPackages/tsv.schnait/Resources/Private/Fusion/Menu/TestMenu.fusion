@@ -1,0 +1,8 @@
+prototype(tsv.schnait:TestMenuOutput) < prototype(Neos.Fusion:Component) {
+    testMenuItems = ${tsv.schnait:MainMenu.menuItems}
+
+    renderer = afx`
+        <h1>Menu Test Output</h1>
+        <pre>{Neos.Fusion:DataStructure asJson={items: testMenuItems}}</pre>
+    `
+}

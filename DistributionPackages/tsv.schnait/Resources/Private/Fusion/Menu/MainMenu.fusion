@@ -1,0 +1,14 @@
+prototype(tsv.schnait:MainMenu) < prototype(Neos.Fusion:Component) {
+  items = ${q(site).children('[instanceof Neos.Neos:Document]').get()}
+  renderer = afx`
+    <nav>
+      <ul>
+        {props.items.map(item => (
+          <li key={item.identifier}>
+            <a href={item.url}>{item.properties.title}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  `
+}
