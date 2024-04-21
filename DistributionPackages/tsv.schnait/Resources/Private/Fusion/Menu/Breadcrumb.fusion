@@ -1,0 +1,17 @@
+prototype(tsv.schnait:Breadcrumb) < prototype(Neos.Fusion:Component) {
+    menuItems = Neos.Neos:BreadcrumbMenuItems {
+        // Keine Konfigurationsoptionen benötigt, da es keine hat
+    }
+
+    renderer = afx`
+        <ul class="breadcrumb">
+            <Neos.Fusion:Loop items={props.menuItems} itemName="item">
+                <li class={iterator.isLast ? 'current' : 'active'}>
+                    <Neos.Neos:NodeLink node={item.node} class={iterator.isLast ? '' : 'active'}>
+                        {item.label}
+                    </Neos.Neos:NodeLink>
+                </li>
+            </Neos.Fusion:Loop>
+        </ul>
+    `
+}

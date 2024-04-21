@@ -1,14 +1,46 @@
 prototype(tsv.schnait:MainMenu) < prototype(Neos.Fusion:Component) {
-  items = ${q(site).children('[instanceof Neos.Neos:Document]').get()}
-  renderer = afx`
-    <nav>
-      <ul>
-        {props.items.map(item => (
-          <li key={item.identifier}>
-            <a href={item.url}>{item.properties.title}</a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  `
+    menuItems = Neos.Neos:MenuItems {
+        startingPoint = 0
+        maximumLevels = 3
+    }
+
+    renderer = afx`
+        <nav class="navbar navbar-inverse navbar" role="navigation">
+            <div class="navbar-logo">
+                <a href="/">
+                    <img src={StaticResource.uri('tsv.schnait', 'Public/Images/TSV_Logo.gif')} alt="TSV Schnait Logo" class="d-inline-block align-text-top" />
+                </a>
+            </div>
+            <div class="navbar-content">
+                <ul class="nav navbar-nav">
+                    <Neos.Fusion:Loop items={props.menuItems} itemName="item">
+                        <li class={item.subItems ? 'dropdown' : 'dropdown'}>
+                            <Neos.Neos:NodeLink node={item.node} class={'nav-link' + (item.subItems ? ' dropdown-toggle' : '')} attributes={(item.subItems ? {'data-bs-toggle': 'dropdown'} : {})}>
+                                {item.label}
+                                <span @if.hasSubItems={item.subItems} class="caret"></span>
+                            </Neos.Neos:NodeLink>
+                            <ul @if.hasSubItems={item.subItems} class="dropdown-menu multi-level">
+                                <Neos.Fusion:Loop items={item.subItems} itemName="subItem">
+                                    <li class={subItem.subItems ? 'dropdown-submenu' : ''}>
+                                        <Neos.Neos:NodeLink node={subItem.node} class="dropdown-item">
+                                            {subItem.label}
+                                        </Neos.Neos:NodeLink>
+                                        <ul @if.hasSubSubItems={subItem.subItems} class="dropdown-menu">
+                                            <Neos.Fusion:Loop items={subItem.subItems} itemName="subSubItem">
+                                                <li>
+                                                    <Neos.Neos:NodeLink node={subSubItem.node} class="dropdown-item">
+                                                        {subSubItem.label}
+                                                    </Neos.Neos:NodeLink>
+                                                </li>
+                                            </Neos.Fusion:Loop>
+                                        </ul>
+                                    </li>
+                                </Neos.Fusion:Loop>
+                            </ul>
+                        </li>
+                    </Neos.Fusion:Loop>
+                </ul>
+            </div>
+        </nav>
+    `
 }
