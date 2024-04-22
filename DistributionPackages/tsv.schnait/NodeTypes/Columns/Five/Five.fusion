@@ -1,9 +1,4 @@
-prototype(tsv.schnait:Columns.Four) < prototype(Neos.Neos:ContentComponent) {
-    layout = ${q(node).property('layout')}
-    columnClass0 = ${String.split(this.layout, '-')[0]}
-    columnClass1 = ${String.split(this.layout, '-')[1]}
-    columnClass2 = ${String.split(this.layout, '-')[2]}
-    columnClass3 = ${String.split(this.layout, '-')[3]}
+prototype(tsv.schnait:Columns.Five) < prototype(Neos.Neos:ContentComponent) {
 
     column0 = Neos.Neos:ContentCollection {
         nodePath = 'column0'
@@ -17,20 +12,26 @@ prototype(tsv.schnait:Columns.Four) < prototype(Neos.Neos:ContentComponent) {
     column3 = Neos.Neos:ContentCollection {
         nodePath = 'column3'
     }
+    column4 = Neos.Neos:ContentCollection {
+        nodePath = 'column4'
+    }
 
     renderer = afx`
         <div class="row">
-            <div class={"col-md-" + props.columnClass0}>
+            <div class={"col-sm-15"}>
                 {props.column0}
             </div>
-            <div class={"col-md-" + props.columnClass1}>
+            <div class={"col-sm-15"}>
                 {props.column1}
             </div>
-            <div class={"col-md-" + props.columnClass2}>
+            <div class={"col-sm-15"}>
                 {props.column2}
             </div>
-            <div class={"col-md-" + props.columnClass3}>
+            <div class={"col-sm-15"}>
                 {props.column3}
+            </div>
+            <div class={"col-sm-15"}>
+                {props.column4}
             </div>
         </div>
     `

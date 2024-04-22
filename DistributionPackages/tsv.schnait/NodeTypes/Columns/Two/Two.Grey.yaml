@@ -1,0 +1,6 @@
+'tsv.schnait:Columns.Two.Grey':
+  superTypes:
+    'Neos.Neos:Content': true
+    'tsv.schnait:Columns.Two': true
+  ui:
+    label: 'Zweispaltiger Inhalt Grau'

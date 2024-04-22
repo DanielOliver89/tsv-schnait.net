@@ -1,0 +1,13 @@
+'tsv.schnait:TextWithImage':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.NodeTypes.BaseMixins:ImageMixin': true
+    'Neos.NodeTypes.BaseMixins:ImageCaptionMixin': true
+  ui:
+    label: 'Text mit Bild'
+    icon: picture
+    position: 40
+  properties:
+    text:
+      options:
+        preset: 'neosdemo.text.autoparagraph'

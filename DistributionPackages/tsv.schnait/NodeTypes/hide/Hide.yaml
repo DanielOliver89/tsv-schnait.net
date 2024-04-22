@@ -4,3 +4,15 @@
 'Neos.Demo:Content.Headline':
   ui:
     group: 'hidden'
+'Neos.Demo:Content.Image':
+  ui:
+    group: 'hidden'
+'Neos.Demo:Content.TextWithImage':
+  ui:
+    group: 'hidden'
+'Neos.Demo:Content.Columns.Two':
+  abstract: true
+'Neos.Demo:Content.Columns.Three':
+  abstract: true
+'Neos.Demo:Content.Columns.Four':
+  abstract: true

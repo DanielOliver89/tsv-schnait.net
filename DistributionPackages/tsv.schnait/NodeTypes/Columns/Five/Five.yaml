@@ -1,11 +1,11 @@
-'tsv.schnait:Columns.Four':
+'tsv.schnait:Columns.Five':
   superTypes:
     'Neos.Neos:Content': true
   ui:
-    label: 'Vierspaltiger Inhalt'
+    label: 'Fünfspaltiger Inhalt'
     icon: 'icon-columns'
     group: 'structure'
-    position: 30
+    position: 40
     inspector:
       groups:
         columnSettings:
@@ -15,7 +15,7 @@
   properties:
     layout:
       type: string
-      defaultValue: '3-3-3-3'
+      defaultValue: '2-2-2-2-2'
       ui:
         label: 'Spaltenaufteilung'
         reloadIfChanged: true
@@ -24,8 +24,8 @@
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
-              '3-3-3-3':
-                label: '25% / 25% / 25% / 25%'
+              '2-2-2-2-2':
+                label: '20% / 20% / 20% / 20% / 20%'
   childNodes:
     column0:
       type: 'Neos.Neos:ContentCollection'
@@ -34,4 +34,6 @@
     column2:
       type: 'Neos.Neos:ContentCollection'
     column3:
+      type: 'Neos.Neos:ContentCollection'
+    column4:
       type: 'Neos.Neos:ContentCollection'

@@ -1,2 +1,22 @@
 Typo3.Neos.NodeTypes:Text --> tsv.schnait:Text
 Typo3.Neos.NodeTypes:Headline --> tsv.schnait:Headline
+Typo3.Neos.NodeTypes:Image --> tsv.schnait:Image
+Typo3.Neos.NodeTypes:­TextWithImage --> tsv.schnait:TextWithImage
+Typo3.Neos.NodeTypes:Html
+Typo3.Neos.NodeTypes:Form
+Typo3.Neos.NodeTypes:AssetList
+Typo3.Neos.NodeTypes:ContentReferences
+Typo3.Neos.NodeTypes:TextBoxBlau
+Typo3.Neos.NodeTypes:TextBoxGrau
+Typo3.Neos.NodeTypes:TextKlein
+tsv.schnait:FancyImage
+tsv.schnait:YouTube
+
+Struktur:
+TYPO3.Neos.NodeTypes:TwoColumn --> tsv.schnait:Columns.Two
+TYPO3.Neos.NodeTypes:TwoColumnGrey --> tsv.schnait:Columns.Two.Grey
+TYPO3.Neos.NodeTypes:TwoColumnBlue --> tsv.schnait:Columns.Two.Blue
+TYPO3.Neos.NodeTypes:ThreeColumn --> tsv.schnait:Columns.Three
+TYPO3.Neos.NodeTypes:FourColumn --> tsv.schnait:Columns.Four
+TYPO3.Neos.NodeTypes:FourColumnGrey --> tsv.schnait:Columns.Four.Grey
+TYPO3.Neos.NodeTypes:FiveColumn --> tsv.schnait:Columns.Five

@@ -1,34 +1,30 @@
-##
-# "ThreeColumn" element
-#
-prototype(Neos.Demo:Content.Columns.Three) < prototype(Neos.Neos:ContentComponent) {
-    column0 = Neos.Neos:ContentCollection {
-        nodePath = 'column0'
-    }
+prototype(tsv.schnait:Columns.Three) < prototype(Neos.Fusion:Component) {
+  layout = ${q(node).property('layout')}
+  columnClasses = ${String.split(this.layout, '-')}
 
-    column1 = Neos.Neos:ContentCollection {
-        nodePath = 'column1'
-    }
+  column0 = Neos.Neos:ContentCollection {
+      nodePath = 'column0'
+  }
 
-    column2 = Neos.Neos:ContentCollection {
-        nodePath = 'column2'
-    }
+  column1 = Neos.Neos:ContentCollection {
+      nodePath = 'column1'
+  }
 
-    renderer = afx`
-        <Neos.Demo:Presentation.Columns.Three>
-            {props.column0}
-            {props.column1}
-            {props.column2}
-        </Neos.Demo:Presentation.Columns.Three>
-    `
-}
+  column2 = Neos.Neos:ContentCollection {
+      nodePath = 'column2'
+  }
 
-prototype(Neos.Demo:Content.Columns.Three.RawContentMode) < prototype(Neos.Neos:ContentComponent) {
-    renderer = afx`
-        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 16px;">
-            <Neos.Neos:RawContent.Node @context.node={q(node).children('column0').get(0)} />
-            <Neos.Neos:RawContent.Node @context.node={q(node).children('column1').get(0)} />
-            <Neos.Neos:RawContent.Node @context.node={q(node).children('column2').get(0)} />
-        </div>
-    `
+  renderer = afx`
+      <div class="row">
+          <div class={"col-md-" + props.columnClasses[0]}>
+              {props.column0}
+          </div>
+          <div class={"col-md-" + props.columnClasses[1]}>
+              {props.column1}
+          </div>
+          <div class={"col-md-" + props.columnClasses[2]}>
+              {props.column2}
+          </div>
+      </div>
+  `
 }

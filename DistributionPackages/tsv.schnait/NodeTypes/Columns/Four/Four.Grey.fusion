@@ -1,4 +1,4 @@
-prototype(tsv.schnait:Columns.Four) < prototype(Neos.Neos:ContentComponent) {
+prototype(tsv.schnait:Columns.Four.Grey) < prototype(Neos.Neos:ContentComponent) {
     layout = ${q(node).property('layout')}
     columnClass0 = ${String.split(this.layout, '-')[0]}
     columnClass1 = ${String.split(this.layout, '-')[1]}
@@ -19,7 +19,7 @@ prototype(tsv.schnait:Columns.Four) < prototype(Neos.Neos:ContentComponent) {
     }
 
     renderer = afx`
-        <div class="row">
+        <div class="row typo3-neos-nodetypes-fourcolumngrey">
             <div class={"col-md-" + props.columnClass0}>
                 {props.column0}
             </div>

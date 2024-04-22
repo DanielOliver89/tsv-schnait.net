@@ -1,0 +1,6 @@
+'tsv.schnait:Columns.Four.Grey':
+  superTypes:
+    'Neos.Neos:Content': true
+    'tsv.schnait:Columns.Four': true
+  ui:
+    label: 'Vierspaltiger Inhalt Grau'

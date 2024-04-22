@@ -1,0 +1,9 @@
+'tsv.schnait:Image':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.NodeTypes.BaseMixins:ImageMixin': true
+    'Neos.NodeTypes.BaseMixins:ImageCaptionMixin': true
+  ui:
+    label: 'Bild'
+    icon: picture
+    position: 30
