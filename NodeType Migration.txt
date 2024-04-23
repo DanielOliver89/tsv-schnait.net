@@ -2,12 +2,12 @@ Typo3.Neos.NodeTypes:Text --> tsv.schnait:Text
 Typo3.Neos.NodeTypes:Headline --> tsv.schnait:Headline
 Typo3.Neos.NodeTypes:Image --> tsv.schnait:Image
 Typo3.Neos.NodeTypes:­TextWithImage --> tsv.schnait:TextWithImage
-Typo3.Neos.NodeTypes:Html
-Typo3.Neos.NodeTypes:Form
-Typo3.Neos.NodeTypes:AssetList
-Typo3.Neos.NodeTypes:ContentReferences
-Typo3.Neos.NodeTypes:TextBoxBlau
-Typo3.Neos.NodeTypes:TextBoxGrau
+Typo3.Neos.NodeTypes:Html --> Neos.­NodeTypes.­Html:­Html
+Typo3.Neos.NodeTypes:Form --> tsv.schnait:ContactForm
+Typo3.Neos.NodeTypes:AssetList --> Neos.­NodeTypes.­AssetList:­AssetList
+Typo3.Neos.NodeTypes:ContentReferences --> Neos.­NodeTypes.­ContentReferences:­ContentReferences
+Typo3.Neos.NodeTypes:TextBoxBlau --> tsv.schnait:Text.Box.Blau
+Typo3.Neos.NodeTypes:TextBoxGrau --> tsv.schnait:Text.Box.Grau
 Typo3.Neos.NodeTypes:TextKlein
 tsv.schnait:FancyImage
 tsv.schnait:YouTube

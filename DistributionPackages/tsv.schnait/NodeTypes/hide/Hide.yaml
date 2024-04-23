@@ -16,3 +16,5 @@
   abstract: true
 'Neos.Demo:Content.Columns.Four':
   abstract: true
+'Neos.Demo:Content.ContactForm':
+  abstract: true
