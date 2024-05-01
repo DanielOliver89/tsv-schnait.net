@@ -15,7 +15,8 @@
             "package-key": "tsv.schnait"
         },
         "applied-flow-migrations": [
-            "Neos.Twitter.Bootstrap-20161124204912"
+            "Neos.Twitter.Bootstrap-20161124204912",
+            "Neos.Party-20161124225257"
         ]
     }
 }
