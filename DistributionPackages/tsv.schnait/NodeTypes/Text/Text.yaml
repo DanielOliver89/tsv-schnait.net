@@ -1,12 +1,19 @@
 'tsv.schnait:Text':
   superTypes:
     'Neos.Neos:Content': true
-    #'Neos.NodeTypes.BaseMixins:TextMixin': true
+    'Neos.NodeTypes.BaseMixins:TextMixin': true
   ui:
     label: 'Text'
     icon: file-text
     position: 2
   properties:
     text:
+      ui:
+        inline:
+            editorOptions:
+              formatting:
+                h4: true
+                h5: true
+                h6: true
       options:
         preset: ''

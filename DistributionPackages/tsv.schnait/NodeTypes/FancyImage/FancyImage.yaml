@@ -2,6 +2,8 @@
   superTypes:
     'Neos.Neos:Content': true
     'Neos.NodeTypes.BaseMixins:ImageMixin': true
+    'Neos.NodeTypes.BaseMixins:ImageCaptionMixin': true
+    'Neos.NodeTypes.BaseMixins:ContentImageMixin': true
   ui:
     label: 'Fancy Image'
     icon: 'icon-picture'

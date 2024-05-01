@@ -1,7 +1,8 @@
 'tsv.schnait:Headline':
   superTypes:
     'Neos.Neos:Content': true
-    #'Neos.NodeTypes.BaseMixins:TitleMixin': true
+    'Neos.NodeTypes.BaseMixins:TextMixin': true
+    'tsv.schnait:Text': true
   ui:
     label: 'Überschrift'
     icon: header

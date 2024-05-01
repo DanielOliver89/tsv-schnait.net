@@ -22,6 +22,12 @@ TYPO3.Neos.NodeTypes:FiveColumn --> tsv.schnait:Columns.Five
 tsv.schnait:FancyImage --> gleich
 tsv.schnait:YouTube --> gleich
 
+Weitere NodeTypes:
+
+TYPO3.Neos.NodeTypes:Menu --> tsv.schnait:MainMenu
+TYPO3.Neos.NodeTypes:Page --> tsv.schnait:Document.Page
+TYPO3.Neos.NodeTypes:Chapter
+
 
 ddev snapshot Version 2.1
 Creating database snapshot tsvneos_20240428220623 
@@ -33,8 +39,18 @@ Creating database snapshot tsvneos_20240501150858
 Created database snapshot tsvneos_20240501150858 
 Restore this snapshot with 'ddev snapshot restore tsvneos_20240501150858'
 
+Snapshot Neos Migration ausgeführt. Weitere NodeTypes noch nicht migriert:
+Creating database snapshot tsvneos_20240501155550 
+Created database snapshot tsvneos_20240501155550 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240501155550'
+
 
 Migrationsskripte ChatGPT
 
 
 ddev import-db --database=db_8.3 --file=
+
+
+Orphan NodeTypes Bsp.:
+Found orphan node named "node-5765209dcd134" (tsv.schnait:Headline) in "/sites/schnait/node-56db5e8e72366/node-572755ea34cba/main/node-5c0d77ab3bfc1/column0/node-5765206a4b26a/column0/node-5765209dcd134"
+zu finden bei: Home --> Aktuelles --> Infos/Berichte --> Überschrift: "Frühlingszeit - Wanderzeit"
