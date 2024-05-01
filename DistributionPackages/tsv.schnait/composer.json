@@ -13,6 +13,9 @@
     "extra": {
         "neos": {
             "package-key": "tsv.schnait"
-        }
+        },
+        "applied-flow-migrations": [
+            "Neos.Twitter.Bootstrap-20161124204912"
+        ]
     }
 }
