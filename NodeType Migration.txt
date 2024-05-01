@@ -8,9 +8,7 @@ Typo3.Neos.NodeTypes:AssetList --> Neos.­NodeTypes.­AssetList:­AssetList
 Typo3.Neos.NodeTypes:ContentReferences --> Neos.­NodeTypes.­ContentReferences:­ContentReferences
 Typo3.Neos.NodeTypes:TextBoxBlau --> tsv.schnait:Text.Box.Blau
 Typo3.Neos.NodeTypes:TextBoxGrau --> tsv.schnait:Text.Box.Grau
-Typo3.Neos.NodeTypes:TextKlein
-tsv.schnait:FancyImage
-tsv.schnait:YouTube
+Typo3.Neos.NodeTypes:TextKlein --> tsv.schnait:Text.Klein
 
 Struktur:
 TYPO3.Neos.NodeTypes:TwoColumn --> tsv.schnait:Columns.Two
@@ -20,3 +18,23 @@ TYPO3.Neos.NodeTypes:ThreeColumn --> tsv.schnait:Columns.Three
 TYPO3.Neos.NodeTypes:FourColumn --> tsv.schnait:Columns.Four
 TYPO3.Neos.NodeTypes:FourColumnGrey --> tsv.schnait:Columns.Four.Grey
 TYPO3.Neos.NodeTypes:FiveColumn --> tsv.schnait:Columns.Five
+
+tsv.schnait:FancyImage --> gleich
+tsv.schnait:YouTube --> gleich
+
+
+ddev snapshot Version 2.1
+Creating database snapshot tsvneos_20240428220623 
+Created database snapshot tsvneos_20240428220623 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240428220623'
+
+Snapshot NodeTypes migriert:
+Creating database snapshot tsvneos_20240501150858 
+Created database snapshot tsvneos_20240501150858 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240501150858'
+
+
+Migrationsskripte ChatGPT
+
+
+ddev import-db --database=db_8.3 --file=

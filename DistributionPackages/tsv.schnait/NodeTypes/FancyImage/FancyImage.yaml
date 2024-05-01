@@ -1,0 +1,23 @@
+'tsv.schnait:FancyImage':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.NodeTypes.BaseMixins:ImageMixin': true
+  ui:
+    label: 'Fancy Image'
+    icon: 'icon-picture'
+    inspector:
+      groups:
+        image:
+          label: 'Image'
+          icon: 'icon-picture'
+  properties:
+    gruppe:
+      type: string
+      defaultValue: 'Fancybox'
+      ui:
+        label: 'Gruppe'
+        inspector:
+          group: 'image'
+          editorOptions:
+            placeholder: 'Gruppenname eintragen'
+            maxlength: 20

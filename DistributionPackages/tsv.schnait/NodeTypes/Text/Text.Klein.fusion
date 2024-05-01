@@ -1,0 +1,16 @@
+##
+# "Text" element
+#
+prototype(tsv.schnait:Text.Klein) < prototype(Neos.Neos:ContentComponent) {
+    content = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`
+    <div class="typo3-neos-nodetypes-textklein">
+        <p>
+            <tsv.schnait:Presentation.Text {...props} />
+        </p>
+    </div>
+  `
+}

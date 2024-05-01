@@ -10,6 +10,9 @@
 'Neos.Demo:Content.TextWithImage':
   ui:
     group: 'hidden'
+'Neos.Demo:Content.YouTube':
+  ui:
+    group: 'hidden'
 'Neos.Demo:Content.Columns.Two':
   abstract: true
 'Neos.Demo:Content.Columns.Three':

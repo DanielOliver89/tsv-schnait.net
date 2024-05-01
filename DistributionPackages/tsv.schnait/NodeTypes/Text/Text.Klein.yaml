@@ -1,0 +1,9 @@
+'tsv.schnait:Text.Klein':
+  superTypes:
+    'Neos.Neos:Content': true
+    'tsv.schnait:Text': true
+    'Neos.NodeTypes.BaseMixins:TextMixin': true
+  ui:
+    label: 'Text Klein'
+    icon: file-text
+    position: 1300
