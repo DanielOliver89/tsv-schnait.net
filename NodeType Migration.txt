@@ -44,6 +44,12 @@ Creating database snapshot tsvneos_20240501155550
 Created database snapshot tsvneos_20240501155550 
 Restore this snapshot with 'ddev snapshot restore tsvneos_20240501155550'
 
+Snapshot Bilder wiederhergestellt, trotzdem noch Probleme 03.05.2024:
+Creating database snapshot tsvneos_20240503231442 
+Created database snapshot tsvneos_20240503231442 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240503231442' 
+
+
 
 Migrationsskripte ChatGPT
 

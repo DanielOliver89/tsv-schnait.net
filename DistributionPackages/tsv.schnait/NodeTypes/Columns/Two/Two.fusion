@@ -12,7 +12,7 @@ prototype(tsv.schnait:Columns.Two) < prototype(Neos.Neos:ContentComponent) {
     }
 
     renderer = afx`
-        <div class="row">
+        <div class="row typo3-neos-nodetypes-twocolumn">
             <div class={"col-md-" + props.columnClass0}>
                 {props.column0}
             </div>
