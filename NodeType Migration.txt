@@ -49,6 +49,16 @@ Creating database snapshot tsvneos_20240503231442
 Created database snapshot tsvneos_20240503231442 
 Restore this snapshot with 'ddev snapshot restore tsvneos_20240503231442' 
 
+Snapshot vor Bereinigen der fehlenden Bilder mit ./flow resource:clean
+Creating database snapshot tsvneos_20240503235028 
+Created database snapshot tsvneos_20240503235028 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240503235028' 
+
+Snapshot vor dem Enternen der anderen Sprachdimensionen:
+Creating database snapshot tsvneos_20240504094353 
+Created database snapshot tsvneos_20240504094353 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240504094353' 
+
 
 
 Migrationsskripte ChatGPT

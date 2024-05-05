@@ -1,0 +1,45 @@
+# Path: Configuration/Policy.yaml
+
+privilegeTargets:
+  'Neos\Neos\Security\Authorization\Privilege\NodeTreePrivilege':
+    'tsv.schnait:ReadWebsiteRoot':
+      matcher: 'isDescendantNodeOf("abaef57e-65c6-4193-ad58-a4e484b6e08a")'
+    'tsv.schnait:EditTischtennis':
+      matcher: 'isDescendantNodeOf("935982cb-83ad-4c07-95c6-7d7bf4703916")'
+    
+  'Neos\ContentRepository\Security\Authorization\Privilege\Node\EditNodePrivilege':
+    'tsv.schnait:EditTischtennis':
+      matcher: 'isDescendantNodeOf("935982cb-83ad-4c07-95c6-7d7bf4703916")'
+  
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'Neos.Neos.Ui:Backend.GeneralAccess':
+      matcher: 'method(Neos\Neos\Ui\Controller\BackendController->.*())'
+    'Neos.Neos:Backend.GeneralAccess':
+      matcher: 'method(Neos\Neos\Controller\Backend\BackendController->.*())'
+    'Neos.Neos.Ui:Backend.ServiceAccess':
+      matcher: 'method(Neos\Neos\Ui\Controller\BackendServiceController->.*())'
+
+roles:
+  'tsv.schnait:TischtennisEditor':
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:ReadWebsiteRoot'
+        permission: GRANT
+      -
+        privilegeTarget: 'tsv.schnait:EditTischtennis'
+        permission: GRANT
+      -
+        privilegeTarget: 'Neos.Neos.Ui:Backend.GeneralAccess'
+        permission: GRANT
+      -
+        privilegeTarget: 'Neos.Neos:Backend.GeneralAccess'
+        permission: GRANT
+      -
+        privilegeTarget: 'Neos.Neos:AllControllerActions'
+        permission: GRANT
+      -
+        privilegeTarget: 'Neos.Neos:Backend.PersonalWorkspaceReadAccess.NodeConverter'
+        permission: GRANT
+      -
+        privilegeTarget: 'Neos.Neos.Ui:Backend.Module.Content'
+        permission: GRANT

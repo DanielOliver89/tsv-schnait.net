@@ -42,15 +42,19 @@ prototype(tsv.schnait:Document.AbstractPage) < prototype(Neos.Neos:Page) {
     @context.node = ${this.node}
 
     # Define template properties
-    menu = Neos.Neos:Menu
+    menu = Neos.Fusion:Template {
+        templatePath = 'resource://tsv.schnait/Private/Fusion/Menu/MainMenu.html'
+        items = ${Neos.Neos:MenuItems {startingPoint = site}}
+        site = ${site}
+    }
     content = Neos.Fusion:Component {
-      main = Neos.Neos:PrimaryContent {
-        nodePath = 'main'
-      }
+        main = Neos.Neos:PrimaryContent {
+            nodePath = 'main'
+        }
 
-      renderer = afx`
-        {props.main}
-      `
+        renderer = afx`
+            {props.main}
+        `
     }
 
     # Script includes before the closing body tag should go here
@@ -58,6 +62,7 @@ prototype(tsv.schnait:Document.AbstractPage) < prototype(Neos.Neos:Page) {
     # This processor appends the rendered javascripts Array to the rendered template
     @process.appendJavaScripts = ${value + this.javascripts}
   }
+
 
   bodyJavaScripts = Neos.Fusion:Join
 }

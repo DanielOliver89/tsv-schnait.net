@@ -1,0 +1,101 @@
+privilegeTargets:
+  'Neos\ContentRepository\Security\Authorization\Privilege\Node\EditNodePrivilege':
+    'tsv.schnait:EditAll':
+      matcher: 'true'
+    'tsv.schnait:EditTischtennis':
+      matcher: 'isDescendantNodeOf("935982cb-83ad-4c07-95c6-7d7bf4703916")'
+    'tsv.schnait:EditLeichtathletik':
+      matcher: 'isDescendantNodeOf("0021d2da-b21d-4543-ac76-2f800fb50bf1")'
+    'tsv.schnait:EditTurnen':
+      matcher: 'isDescendantNodeOf("b85cbd69-27d8-4160-a884-e09df44762c3")'
+    'tsv.schnait:EditVersehrtensport':
+      matcher: 'isDescendantNodeOf("c35dc0cc-d4e6-4eee-944c-496fdab01c75")'
+    'tsv.schnait:EditHome':
+      matcher: 'isDescendantNodeOf("abaef57e-65c6-4193-ad58-a4e484b6e08a")'
+    'tsv.schnait:EditAktuelles':
+      matcher: 'isDescendantNodeOf("0185c8cc-3d9-46b5-8f38-307728c72389")'
+    'tsv.schnait:EditSportangebot':
+      matcher: 'isDescendantNodeOf("0618377c-29d3-491d-b5df-978e077080f2")'
+    'tsv.schnait:EditVerein':
+      matcher: 'isDescendantNodeOf("166cfcfa-114c-4643-b92d-d82f2b0b355f")'
+    'tsv.schnait:EditKontakt':
+      matcher: 'isDescendantNodeOf("eeaab130-2990-45bf-97d6-078557d342f9")'
+    'tsv.schnait:EditImpressum':
+      matcher: 'isDescendantNodeOf("41b1840a-e45d-403c-9027-ebb799c67992")'
+
+roles:
+  'tsv.schnait:Admin':
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditAll'
+        permission: GRANT
+
+  'tsv.schnait:TischtennisEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditTischtennis'
+        permission: GRANT
+
+  'tsv.schnait:LeichtathletikEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditLeichtathletik'
+        permission: GRANT
+
+  'tsv.schnait:TurnenEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditTurnen'
+        permission: GRANT
+
+  'tsv.schnait:VersehrtensportEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditVersehrtensport'
+        permission: GRANT
+
+  'tsv.schnait:HomeEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditHome'
+        permission: GRANT
+
+  'tsv.schnait:AktuellesEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditAktuelles'
+        permission: GRANT
+
+  'tsv.schnait:SportangebotEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditSportangebot'
+        permission: GRANT
+
+  'tsv.schnait:VereinEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditVerein'
+        permission: GRANT
+
+  'tsv.schnait:KontaktEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditKontakt'
+        permission: GRANT
+
+  'tsv.schnait:ImpressumEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditImpressum'
+        permission: GRANT

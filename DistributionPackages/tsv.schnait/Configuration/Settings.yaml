@@ -1,0 +1,10 @@
+Neos:
+  Neos:
+    modules:
+      'management':
+        controller: 'Some\Management\Controller'
+        submodules:
+          'workspaces':
+            controller: 'Some\Workspaces\Controller'
+      'ui':
+        controller: 'Neos\Neos\Ui\Controller\BackendController'
