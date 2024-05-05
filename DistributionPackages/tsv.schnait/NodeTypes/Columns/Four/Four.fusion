@@ -19,7 +19,7 @@ prototype(tsv.schnait:Columns.Four) < prototype(Neos.Neos:ContentComponent) {
     }
 
     renderer = afx`
-        <div class="row">
+        <div class="row typo3-neos-nodetypes-fourcolumn">
             <div class={"col-md-" + props.columnClass0}>
                 {props.column0}
             </div>

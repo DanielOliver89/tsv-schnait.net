@@ -3,3 +3,5 @@ Neos:
     Backend:
       localization:
         defaultLanguage: en_US
+        dimensions:
+          - en_US

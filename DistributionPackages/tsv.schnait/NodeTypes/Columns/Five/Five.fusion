@@ -17,7 +17,7 @@ prototype(tsv.schnait:Columns.Five) < prototype(Neos.Neos:ContentComponent) {
     }
 
     renderer = afx`
-        <div class="row">
+        <div class="row typo3-neos-nodetypes-fivecolumn">
             <div class={"col-sm-15"}>
                 {props.column0}
             </div>

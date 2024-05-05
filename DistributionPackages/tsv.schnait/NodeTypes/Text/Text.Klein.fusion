@@ -8,9 +8,7 @@ prototype(tsv.schnait:Text.Klein) < prototype(Neos.Neos:ContentComponent) {
 
     renderer = afx`
     <div class="typo3-neos-nodetypes-textklein">
-        <p>
-            <tsv.schnait:Presentation.Text {...props} />
-        </p>
+        <tsv.schnait:Presentation.Text {...props} />
     </div>
   `
 }

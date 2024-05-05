@@ -15,7 +15,7 @@ prototype(tsv.schnait:Columns.Three) < prototype(Neos.Fusion:Component) {
   }
 
   renderer = afx`
-      <div class="row">
+      <div class="row typo3-neos-nodetypes-threecolumn">
           <div class={"col-md-" + props.columnClasses[0]}>
               {props.column0}
           </div>

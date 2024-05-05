@@ -59,12 +59,11 @@ Creating database snapshot tsvneos_20240504094353
 Created database snapshot tsvneos_20240504094353 
 Restore this snapshot with 'ddev snapshot restore tsvneos_20240504094353' 
 
+05.05.2024: Fertig
+Creating database snapshot tsvneos_20240505202417 
+Created database snapshot tsvneos_20240505202417 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240505202417' 
 
-
-Migrationsskripte ChatGPT
-
-
-ddev import-db --database=db_8.3 --file=
 
 
 Orphan NodeTypes Bsp.:
