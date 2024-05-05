@@ -24,7 +24,14 @@ privilegeTargets:
       matcher: 'isDescendantNodeOf("41b1840a-e45d-403c-9027-ebb799c67992")'
 
 roles:
-  'tsv.schnait:Admin':
+  'tsv.schnait:AllesEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditAll'
+        permission: GRANT
+
+  'Neos.Neos:Administrator':
     privileges:
       -
         privilegeTarget: 'tsv.schnait:EditAll'

@@ -8,6 +8,7 @@ prototype(tsv.schnait:FancyImage) < prototype(Neos.Neos:ContentComponent) {
     }
     alt = ${q(node).property('alternativeText')}
     title = ${q(node).property('title')}
+    gruppe = ${q(node).property('gruppe')}
     hasCaption = ${q(node).property('hasCaption')}
     caption = Neos.Neos:Editable {
         property = 'caption'
@@ -17,4 +18,3 @@ prototype(tsv.schnait:FancyImage) < prototype(Neos.Neos:ContentComponent) {
 
     renderer = afx`<tsv.schnait:Presentation.FancyImage {...props} />`
 }
-
