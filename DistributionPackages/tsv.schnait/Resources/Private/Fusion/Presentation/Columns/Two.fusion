@@ -2,8 +2,8 @@ prototype(tsv.schnait:Presentation.Columns.Two) < prototype(tsv.schnait:Presenta
     // This is used for the living styleguide (Monocle)
     // Read more about this in the README.md
     @styleguide.props.content = afx`
-        <Neos.Demo:Presentation.Alert content="First column" />
-        <Neos.Demo:Presentation.Alert content="Second column" />
+        <tsv.schnait:Presentation.Alert content="First column" />
+        <tsv.schnait:Presentation.Alert content="Second column" />
     `
 
     content = null

@@ -22,7 +22,7 @@ prototype(tsv.schnait:Presentation.YouTube) < prototype(Neos.Fusion:Component) {
         <tsv.schnait:Presentation.Alert
             @if={!props.videoId && props.inBackend}
             class="aspect-video"
-            content={I18n.translate('Neos.Demo:NodeTypes.Content.YouTube:error.no.videoid')}
+            content={'Please specify a video ID'}
         />
     `
 }
