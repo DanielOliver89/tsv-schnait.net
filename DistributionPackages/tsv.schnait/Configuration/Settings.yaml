@@ -1,7 +1,10 @@
 Neos:
+  ContentRepository:
+    contentDimensions: {}
   Neos:
-    Backend:
-      localization:
-        defaultLanguage: en_US
-        dimensions:
-          - en_US
+    userInterface:
+      navigateComponent:
+        nodeTree:
+          loadingDepth: 2
+        #structureTree:
+          #loadingDepth: 2

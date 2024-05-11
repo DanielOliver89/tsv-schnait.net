@@ -1,0 +1,28 @@
+up:
+  comments: 'Set all contents to German language'
+  migration:
+    - filters:
+        - type: DimensionValues
+          settings:
+            dimensionValues: {}  # Filters all nodes regardless of their current dimension
+      transformations:
+        - type: SetDimensions
+          settings:
+            dimensionValues:
+              language: ['de']
+            addDefaultDimensionValues: false  # Set this to true if you want to ensure that 'de' is added to all nodes regardless of current dimensions
+
+down:
+  comments: 'Revert language dimension to previous state (if needed)'
+  migration:
+    - filters:
+        - type: DimensionValues
+          settings:
+            dimensionValues: 
+              language: ['de']
+      transformations:
+        - type: SetDimensions
+          settings:
+            dimensionValues:
+              language: ['en_US']  # Assuming 'en_US' was the previous setting
+            addDefaultDimensionValues: false

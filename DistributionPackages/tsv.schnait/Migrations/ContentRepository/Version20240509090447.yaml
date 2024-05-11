@@ -1,0 +1,21 @@
+#############################################################################################################################################################################
+# For more information about node migrations in Neos, checkout the documentation: https://neos.readthedocs.io/en/stable/References/NodeMigrations.html?highlight=migrations #
+#############################################################################################################################################################################
+up:
+  comments: 'Remove dimension values'
+  migration:
+    - filters:
+        - type: DimensionValues
+          settings:
+            dimensionValues:
+              language:
+                - "en_US"
+      transformations:
+        - type: SetDimensions
+          settings:
+            dimensionValues: []
+            addDefaultDimensionValues: false
+
+down:
+  comments: 'No down path'
+  migration: []

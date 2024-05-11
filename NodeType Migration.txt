@@ -64,6 +64,21 @@ Creating database snapshot tsvneos_20240505202417
 Created database snapshot tsvneos_20240505202417 
 Restore this snapshot with 'ddev snapshot restore tsvneos_20240505202417' 
 
+09.05.2024: Vor dem Löschen der Sprachdimensionen
+Creating database snapshot tsvneos_20240509105410 
+Created database snapshot tsvneos_20240509105410 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240509105410' 
+
+Dimensionen und Bilder korrigiert
+Creating database snapshot tsvneos_20240509233248 
+Created database snapshot tsvneos_20240509233248 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240509233248' 
+
+11.05.2024 Vor dem Löschen der Demo Seite Neos.Demo
+Creating database snapshot tsvneos_20240511160529 
+Created database snapshot tsvneos_20240511160529 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240511160529' 
+
 
 
 Orphan NodeTypes Bsp.:
