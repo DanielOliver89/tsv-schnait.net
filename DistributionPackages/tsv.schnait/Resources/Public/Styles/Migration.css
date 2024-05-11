@@ -1,0 +1,5 @@
+/* Letzte Ebene des Breadcrumb Menüs nicht anklickbar und schwarze Schriftfarbe */
+.breadcrumb li:last-child a {
+    pointer-events: none;
+    color: black;
+}
