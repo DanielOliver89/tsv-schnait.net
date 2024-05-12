@@ -21,7 +21,7 @@
       type: string
       defaultValue: ''
       ui:
-        label: i18n
+        label: 'Video Identifier'
         showInCreationDialog: true
         reloadIfChanged: true
         inspector:

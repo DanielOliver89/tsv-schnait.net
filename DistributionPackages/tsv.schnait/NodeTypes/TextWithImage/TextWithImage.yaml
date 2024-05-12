@@ -11,4 +11,4 @@
   properties:
     text:
       options:
-        preset: 'neosdemo.text.autoparagraph'
+        preset: 'tsvschnait.text.autoparagraph'

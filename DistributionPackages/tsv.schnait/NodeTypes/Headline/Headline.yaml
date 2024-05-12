@@ -15,7 +15,7 @@
   properties:
     title:
       options:
-        preset: 'neosdemo.text.headline'
+        preset: 'tsvschnait.text.headline'
     tagName:
       type: string
       defaultValue: 'h1'
