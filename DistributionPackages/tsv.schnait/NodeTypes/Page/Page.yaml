@@ -3,7 +3,7 @@
     'Neos.Neos:Document': true
   ui:
     icon: file
-    label: 'tsv.schnait Page'
+    label: 'Seite'
   childNodes:
     main:
       type: 'Neos.Neos:ContentCollection'

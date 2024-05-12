@@ -8,3 +8,9 @@ Neos:
           loadingDepth: 2
         #structureTree:
           #loadingDepth: 2
+    nodeTypes:
+      groups:
+        'other':
+          label: 'Sonstiges'
+          position: 100
+          collapsed: false
