@@ -4,16 +4,39 @@
     'Neos.NodeTypes.BaseMixins:TextMixin': true
   ui:
     label: 'Text'
-    icon: file-text
+    icon: 'file-text'
     position: 20
   properties:
     text:
       ui:
         inline:
-            editorOptions:
-              formatting:
-                h4: true
-                h5: true
-                h6: true
+          editorOptions:
+            formatting:
+              strong: true
+              em: true
+              sub: false
+              sup: false
+              p: true
+              h1: true
+              h2: true
+              h3: true
+              h4: true
+              h5: true
+              h6: true
+              pre: true
+              removeFormat: true
+              table: true
+              a: true
+              ol: true
+              ul: true
+              underline: false
+              strikethrough: false
+              blockquote: true
+              left: true
+              right: true
+              center: true
+              justify: true
+            autoparagraph: true
+            placeholder: 'Text hier eingeben...'
       options:
         preset: ''

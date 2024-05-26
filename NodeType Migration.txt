@@ -79,6 +79,16 @@ Creating database snapshot tsvneos_20240511160529
 Created database snapshot tsvneos_20240511160529 
 Restore this snapshot with 'ddev snapshot restore tsvneos_20240511160529' 
 
+25.05.2024 Vor dem Neuimport der 2.1 DB
+Creating database snapshot tsvneos_20240525144321 
+Created database snapshot tsvneos_20240525144321 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240525144321' 
+
+25.05.2024 DB erneut mit Node Migration Skript migriert. Vor dem Enternen der Dimensions:
+Creating database snapshot tsvneos_20240525224446 
+Created database snapshot tsvneos_20240525224446 
+Restore this snapshot with 'ddev snapshot restore tsvneos_20240525224446' 
+
 
 
 Orphan NodeTypes Bsp.:

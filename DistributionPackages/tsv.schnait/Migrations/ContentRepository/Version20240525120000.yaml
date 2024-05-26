@@ -1,0 +1,228 @@
+# Migrations/ContentRepository/Version20240525120000.yaml
+identifier: '20240525120000'
+description: 'Migration der NodeTypes zu tsv.schnait Namespace'
+up:
+  comments: 'Migration der NodeTypes zu tsv.schnait Namespace'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:Text'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Text'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:Headline'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Headline'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:Image'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Image'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:TextWithImage'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:TextWithImage'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:Html'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'Neos.NodeTypes.Html:Html'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:Form'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:ContactForm'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:AssetList'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'Neos.NodeTypes.AssetList:AssetList'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:ContentReferences'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'Neos.NodeTypes.ContentReferences:ContentReferences'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:TextBoxBlau'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Text.Box.Blau'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:TextBoxGrau'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Text.Box.Grau'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:TextKlein'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Text.Klein'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:TwoColumn'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Columns.Two'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:TwoColumnGrey'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Columns.Two.Grey'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:TwoColumnBlue'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Columns.Two.Blue'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:ThreeColumn'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Columns.Three'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:FourColumn'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Columns.Four'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:FourColumnGrey'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Columns.Four.Grey'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:FiveColumn'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Columns.Five'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:Menu'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:MainMenu'
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:Page'
+      transformations:
+        -
+          type: 'ChangeNodeType'
+          settings:
+            newType: 'tsv.schnait:Document.Page'
+
+down: []

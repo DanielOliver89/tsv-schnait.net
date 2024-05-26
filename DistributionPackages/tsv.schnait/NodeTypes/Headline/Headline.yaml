@@ -1,11 +1,10 @@
 'tsv.schnait:Headline':
   superTypes:
     'Neos.Neos:Content': true
-    'Neos.NodeTypes.BaseMixins:TextMixin': true
-    'tsv.schnait:Text': true
+    'Neos.NodeTypes.BaseMixins:TitleMixin': true
   ui:
     label: 'Überschrift'
-    icon: header
+    icon: 'icon-header'
     position: 10
     inspector:
       groups:
@@ -14,30 +13,26 @@
           icon: header
   properties:
     title:
-      options:
-        preset: 'tsvschnait.text.headline'
-    tagName:
       type: string
-      defaultValue: 'h1'
+      defaultValue: '<h1>Enter headline here</h1>'
       ui:
-        label: 'Größe'
-        reloadIfChanged: true
-        inspector:
-          group: settings
-          position: 10
-          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+        inlineEditable: true
+        inline:
           editorOptions:
-            values:
-              h1:
-                label: h1
-              h2:
-                label: h2
-              h3:
-                label: h3
-              h4:
-                label: h4
-              h5:
-                label: h5
+            formatting:
+              p: false
+              h1: true
+              h2: true
+              h3: true
+              h4: true
+              h5: true
+              h6: true
+              removeFormat: true
+              a: true
+              left: true
+              right: true
+              center: true
+              justify: true
     ankerid:
       type: string
       defaultValue: ''
@@ -47,7 +42,7 @@
         inspector:
           group: 'settings'
           position: 20
-          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Bitte Anker ID wählen...'
             values:
