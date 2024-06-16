@@ -9,7 +9,7 @@ prototype(tsv.schnait:Document.AbstractPage) < prototype(Neos.Neos:Page) {
 
     titleTag = Neos.Fusion:Tag {
       tagName = 'title'
-      content = ${q(node).property('title')}
+      content = ${q(node).property('titleOverride') ? q(node).property('titleOverride') : q(node).property('title')}
     }
 
     # Add stylesheets to your page

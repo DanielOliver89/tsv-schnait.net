@@ -11,6 +11,9 @@ prototype(tsv.schnait:Presentation.Headline) < prototype(Neos.Fusion:Component) 
         }
     }
 
+    // Zugriff auf die ankerid Property hinzufügen
+    ankerid = ${node.properties.ankerid}
+
     tagName = 'h2'
     tagStyle = null
     class = null
@@ -30,6 +33,7 @@ prototype(tsv.schnait:Presentation.Headline) < prototype(Neos.Fusion:Component) 
 
         renderer = Neos.Fusion:Tag {
             tagName = ${props.tagName}
+            attributes.id = ${props.ankerid}
             attributes.class = ${props.class || props._class}
             content = ${props.content}
         }

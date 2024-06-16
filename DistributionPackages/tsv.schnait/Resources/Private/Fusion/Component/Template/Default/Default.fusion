@@ -20,7 +20,7 @@ prototype(tsv.schnait:Component.Template.Default) < prototype(Neos.Fusion:Compon
                 <footer class="footer">
                   <div class="row">
                     <div class="col-sm-6" id="footerLinks">
-                        <a href="/impressum.html">Impressum</a>
+                        <a href="/impressum">Impressum</a>
                     </div>
                     <div class="col-sm-6" id="footerRechts">
                         <a href="/">© Turn- und Sportverein Schnait 1911 e.V.</a>

@@ -9,7 +9,7 @@
      </dimensions>
      <accessRoles __type="array"/>
      <properties>
-      <title __type="string">Home</title>
+      <title __type="string">TSV Schnait 1911 e.V.</title>
       <uriPathSegment __type="string">home</uriPathSegment>
      </properties>
     </variant>
