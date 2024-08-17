@@ -21,3 +21,13 @@ function jump(h){
 
 /* Fancybox */
 jQuery('.tsv-schnait-fancyimage a.fancybox').fancybox();
+
+/* Zoom Anpassung für kleine und mobile Geräte */
+
+$(window).on('load resize', function() {
+    if ($(window).width() < 768) {
+      $('body').css('zoom', $(window).width() / 768);
+    } else {
+      $('body').css('zoom', 1);
+    }
+  });
