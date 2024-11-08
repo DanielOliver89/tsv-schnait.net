@@ -1,25 +1,32 @@
 prototype(tsv.schnait:Presentation.Image) < prototype(Neos.Fusion:Component) {
-    // This is used for the living styleguide (Monocle)
-    // Read more about this in the README.md
-    @styleguide.props.renderDummyImage = true
-
     src = null
-
     alt = null
     title = null
     class = 'typo3-neos-nodetypes-image'
     imageClass = null
-
     hasCaption = false
     caption = null
-
+    link = null
     renderDummyImage = false
+    inBackend = false
 
     @if.hasSource = ${this.src || this.renderDummyImage}
 
     renderer = afx`
         <figure class={props.class}>
-            <img
+            <a @if={props.link && String.length(props.link) > 0 && !props.inBackend} 
+               href={props.link} 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <img
+                    src={props.src || StaticResource.uri('Neos.Neos', 'Public/Images/dummy-image.svg')}
+                    title={props.title}
+                    alt={props.alt}
+                    class={props.imageClass}
+                />
+            </a>
+            <img 
+                @if={!props.link || String.length(props.link) == 0 || props.inBackend}
                 src={props.src || StaticResource.uri('Neos.Neos', 'Public/Images/dummy-image.svg')}
                 title={props.title}
                 alt={props.alt}
@@ -30,4 +37,4 @@ prototype(tsv.schnait:Presentation.Image) < prototype(Neos.Fusion:Component) {
             </figcaption>
         </figure>
     `
- }
+}

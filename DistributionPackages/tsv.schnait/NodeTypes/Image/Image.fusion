@@ -12,6 +12,11 @@ prototype(tsv.schnait:Image) < prototype(Neos.Neos:ContentComponent) {
     caption = Neos.Neos:Editable {
         property = 'caption'
     }
+    # Link-URI nur setzen wenn eine link property existiert und nicht leer ist
+    link = ${q(node).property('link') ? (String.indexOf(q(node).property('link'), '://') == -1 ? 'https://' + q(node).property('link') : q(node).property('link')) : null}
+    
+    # Backend-Status weitergeben
+    inBackend = ${node.context.inBackend}
 
     renderDummyImage = ${node.context.inBackend}
 
