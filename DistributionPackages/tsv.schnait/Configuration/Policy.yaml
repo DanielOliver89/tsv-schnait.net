@@ -22,6 +22,8 @@ privilegeTargets:
       matcher: 'isDescendantNodeOf("eeaab130-2990-45bf-97d6-078557d342f9")'
     'tsv.schnait:EditImpressum':
       matcher: 'isDescendantNodeOf("41b1840a-e45d-403c-9027-ebb799c67992")'
+    'tsv.schnait:EditJudo':
+      matcher: 'isDescendantNodeOf("46f0a783-7098-4ce8-bb27-eb5d0d2b7a35")'
 
 roles:
   'tsv.schnait:AllesEditor':
@@ -98,6 +100,13 @@ roles:
     privileges:
       -
         privilegeTarget: 'tsv.schnait:EditKontakt'
+        permission: GRANT
+
+  'tsv.schnait:JudoEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'tsv.schnait:EditJudo'
         permission: GRANT
 
   'tsv.schnait:ImpressumEditor':
