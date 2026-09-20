@@ -81,10 +81,25 @@ a:focus {
     color: var(--tsv-navy);
 }
 
+/* Fokus: Bootstrap 3 zeichnet per a:focus bei JEDEM Klick/Tipp den kräftigen Browser-Rahmen.
+   Beim Tippen und Klicken gibt es deshalb keinen Rahmen, bei Tastaturbedienung (Tab) bleibt ein
+   dezenter Ring sichtbar – wichtig für die Barrierefreiheit. */
+a:focus,
+button:focus {
+    outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
 :focus-visible {
-    outline: 3px solid rgba(24, 116, 205, .5);
+    outline: 3px solid rgba(24, 116, 205, .55);
     outline-offset: 2px;
     border-radius: 3px;
+}
+
+/* auf der dunkelblauen Fußzeile wäre der blaue Ring kaum zu sehen */
+.footer a:focus-visible {
+    outline-color: #fff;
 }
 
 img {
