@@ -804,6 +804,37 @@ figcaption {
     padding: 9px 0;
 }
 
+/* Titelzeilen „Überschrift | Datum" (Klasse setzt tsv.js): auf dem Handy steht das Datum klein über dem Titel.
+   Nur die sichtbare Reihenfolge wird getauscht, im HTML bleibt es Titel → Datum. */
+@media (max-width: 767px) {
+    .is-titlebar {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .is-titlebar::before,
+    .is-titlebar::after {
+        display: none;
+    }
+
+    .is-titlebar > [class*="col-"]:last-child p {
+        padding: 10px 0 0;
+        font-size: 13px;
+        color: var(--tsv-muted);
+        text-align: left !important;
+    }
+
+    .is-titlebar > [class*="col-"]:first-child h1,
+    .is-titlebar > [class*="col-"]:first-child h2,
+    .is-titlebar > [class*="col-"]:first-child h3,
+    .is-titlebar > [class*="col-"]:first-child h4,
+    .is-titlebar > [class*="col-"]:first-child h5,
+    .is-titlebar > [class*="col-"]:first-child h6 {
+        margin: 0;
+        padding: 2px 0 10px;
+    }
+}
+
 /* ---------- 8 Stundenplan (Fünf-Spalten-Zeilen) ---------- */
 @media (min-width: 768px) {
     .typo3-neos-nodetypes-fivecolumn {

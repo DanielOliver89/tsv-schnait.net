@@ -245,6 +245,26 @@
         });
     }
 
+    /* ---------- Graue Titelzeilen (Überschrift | Datum): auf dem Handy steht das Datum klein über dem Titel ---------- */
+    function initTitleBars() {
+        document.querySelectorAll('.typo3-neos-nodetypes-twocolumngrey').forEach(function (row) {
+            if (row.children.length !== 2) {
+                return;
+            }
+            var title = row.children[0].querySelector(':scope > .neos-contentcollection');
+            var meta = row.children[1].querySelector(':scope > .neos-contentcollection');
+            if (!title || !meta || title.children.length !== 1 || meta.children.length !== 1) {
+                return;
+            }
+            var heading = title.children[0];
+            var isHeading = /^H[1-6]$/.test(heading.tagName) || heading.classList.contains('tsv-headline');
+            var text = meta.textContent.replace(/\s+/g, ' ').trim();
+            if (isHeading && text !== '' && text.length <= 60 && !meta.querySelector('img')) {
+                row.classList.add('is-titlebar');
+            }
+        });
+    }
+
     function initLightbox() {
         if (typeof window.GLightbox !== 'function') {
             return;
@@ -262,6 +282,7 @@
     } else {
         initSchedules();
         initGalleries();
+        initTitleBars();
         initLightbox();
     }
 })();
