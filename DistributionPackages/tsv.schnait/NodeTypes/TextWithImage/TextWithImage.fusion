@@ -10,7 +10,7 @@ prototype(tsv.schnait:TextWithImage) < prototype(Neos.Neos:ContentComponent) {
         asset = ${q(node).property('image')}
         maximumWidth = 500
     }
-    alt = ${q(node).property('alternativeText')}
+    alt = ${q(node).property('alternativeText') || ''}
     title = ${q(node).property('title')}
     hasCaption = ${q(node).property('hasCaption')}
     caption = Neos.Neos:Editable {

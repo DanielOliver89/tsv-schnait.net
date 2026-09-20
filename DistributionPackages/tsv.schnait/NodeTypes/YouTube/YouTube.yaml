@@ -11,7 +11,7 @@
     inspector:
       groups:
         'video':
-          label: i18n
+          label: 'YouTube-Video'
           icon: 'icon-film'
           position: 50
     help:
@@ -21,7 +21,7 @@
       type: string
       defaultValue: ''
       ui:
-        label: 'Video Identifier'
+        label: 'Video-ID'
         showInCreationDialog: true
         reloadIfChanged: true
         inspector:

@@ -1,4 +1,4 @@
-prototype(tsv.schnait:Columns.Three) < prototype(Neos.Fusion:Component) {
+prototype(tsv.schnait:Columns.Three) < prototype(Neos.Neos:ContentComponent) {
   layout = ${q(node).property('layout')}
   columnClasses = ${String.split(this.layout, '-')}
 

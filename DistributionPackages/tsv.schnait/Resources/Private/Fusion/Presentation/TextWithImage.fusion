@@ -25,9 +25,9 @@ prototype(tsv.schnait:Presentation.TextWithImage) < prototype(Neos.Fusion:Compon
     @if.hasText = ${this.text || (this.src || this.renderDummyImage)}
 
     renderer = afx`
-        <div class="md:flex md:flex-wrap md:gap-4 md:flex-row">
-            <tsv.schnait:Presentation.Image {...props} class="md:mb-0" imageClass="w-full max-w-none" />
-            <div class="min-w-[30ch] flex-1">{props.text}</div>
+        <div class="tsv-textwithimage">
+            <tsv.schnait:Presentation.Image {...props} class="tsv-textwithimage__image" />
+            <div class="tsv-textwithimage__text">{props.text}</div>
         </div>
     `
 }

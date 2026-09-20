@@ -10,18 +10,19 @@ prototype(tsv.schnait:Presentation.YouTube) < prototype(Neos.Fusion:Component) {
     inBackend = false
 
     renderer = afx`
-        <figure  @if={props.videoId} class="aspect-video">
+        <figure @if={props.videoId} class="tsv-video">
             <iframe
-                src={'https://www.youtube.com/embed/' + props.videoId + '?wmode=transparent'}
+                src={'https://www.youtube-nocookie.com/embed/' + props.videoId + '?wmode=transparent'}
+                title="YouTube-Video"
                 width="100%"
                 height="100%"
-                frameborder="0"
+                loading="lazy"
                 allowfullscreen
             ></iframe>
         </figure>
         <tsv.schnait:Presentation.Alert
             @if={!props.videoId && props.inBackend}
-            class="aspect-video"
+            class="tsv-video"
             content={'Please specify a video ID'}
         />
     `

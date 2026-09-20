@@ -9,7 +9,7 @@
     inspector:
       groups:
         settings:
-          label: i18n
+          label: 'Einstellungen'
           icon: header
   properties:
     title:
@@ -37,7 +37,7 @@
       type: string
       defaultValue: ''
       ui:
-        label: 'AnkerID'
+        label: 'Anker-ID'
         reloadIfChanged: true
         inspector:
           group: 'settings'
