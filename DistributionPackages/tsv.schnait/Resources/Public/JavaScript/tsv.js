@@ -55,7 +55,7 @@
         });
 
         // Auf dem Handy den Bereich der aktuellen Seite bereits aufgeklappt zeigen
-        if (toggle && window.matchMedia(MOBILE_QUERY).matches) {
+        if (toggle && !inBackend && window.matchMedia(MOBILE_QUERY).matches) {
             nav.querySelectorAll('.tsv-nav__item--active.has-children').forEach(function (item) {
                 item.classList.add('is-open');
                 item.querySelector(':scope > .tsv-nav__subtoggle').setAttribute('aria-expanded', 'true');
@@ -96,6 +96,70 @@
             window.addEventListener('scroll', onScroll, {passive: true});
             onScroll();
         }
+    }
+
+    /* ---------- Neos-Backend: immer das Desktop-Layout zeigen ----------
+     * Der Vorschaurahmen im Backend ist oft schmaler als 768px. Damit Spalten und Stundenplan dort
+     * nebeneinander pflegbar bleiben, werden die breitenabhängigen Media-Regeln der eigenen Stylesheets
+     * so ausgewertet, als wäre der Rahmen mindestens 768px breit; die Seite wird passend verkleinert.
+     */
+    function initBackendDesktopLayout() {
+        var MIN_WIDTH = 768;
+        var wrapper = document.getElementById('wrapper');
+        var rules = [];
+
+        function collect(list) {
+            Array.prototype.forEach.call(list, function (rule) {
+                if (rule.type === CSSRule.MEDIA_RULE) {
+                    if (/width/.test(rule.media.mediaText)) {
+                        rules.push({rule: rule, original: rule.media.mediaText});
+                    }
+                    collect(rule.cssRules);
+                }
+            });
+        }
+
+        Array.prototype.forEach.call(document.styleSheets, function (sheet) {
+            if (!sheet.href || sheet.href.indexOf('/tsv.schnait/') === -1) {
+                return;
+            }
+            try {
+                collect(sheet.cssRules);
+            } catch (e) { /* Stylesheet nicht lesbar – überspringen */ }
+        });
+
+        function matchesAt(mediaText, width) {
+            // genügt für die hier verwendeten Regeln: Kombinationen aus min-width/max-width in px
+            return mediaText.split(',').some(function (query) {
+                var ok = true;
+                query.replace(/\((min|max)-width:\s*([\d.]+)px\)/g, function (match, kind, value) {
+                    value = parseFloat(value);
+                    ok = ok && (kind === 'min' ? width >= value : width <= value);
+                });
+                return ok;
+            });
+        }
+
+        function apply() {
+            var frameWidth = document.documentElement.clientWidth;
+            var narrow = frameWidth < MIN_WIDTH;
+            rules.forEach(function (entry) {
+                var text = entry.original;
+                if (narrow) {
+                    text = matchesAt(entry.original, MIN_WIDTH) ? 'all' : 'not all';
+                }
+                if (entry.rule.media.mediaText !== text) {
+                    entry.rule.media.mediaText = text;
+                }
+            });
+            if (wrapper) {
+                wrapper.style.minWidth = narrow ? MIN_WIDTH + 'px' : '';
+                wrapper.style.zoom = narrow ? String(frameWidth / MIN_WIDTH) : '';
+            }
+        }
+
+        apply();
+        window.addEventListener('resize', apply);
     }
 
     /* ---------- Stundenplan: Wochentage für die Handy-Ansicht an die Spalten schreiben ---------- */
@@ -193,7 +257,9 @@
     }
 
     initNavigation();
-    if (!inBackend) {
+    if (inBackend) {
+        initBackendDesktopLayout();
+    } else {
         initSchedules();
         initGalleries();
         initLightbox();
