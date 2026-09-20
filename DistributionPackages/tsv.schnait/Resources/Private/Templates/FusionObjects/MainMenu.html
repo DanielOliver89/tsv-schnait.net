@@ -2,105 +2,41 @@
 <f:render section="itemList" />
 
 <f:section name="itemList">
-  <nav class="navbar navbar-inverse navbar" role="navigation">
-    <div class="navbar-logo">
-      <!--<a class="navbar-brand" href="{neos:uri.node(node: '~')}">Neos</a>-->
-      <a href="{neos:uri.node(node: '~')}">
-        <img src="{f:uri.resource(path: 'Images/TSV_Logo.gif', package: 'tsv.schnait')}" media="all">
-      </a>
-    </div>
+  <nav class="tsv-nav" aria-label="Hauptnavigation">
+    <a class="tsv-nav__logo" href="{neos:uri.node(node: '~')}">
+      <img src="{f:uri.resource(path: 'Images/TSV_Logo.png', package: 'tsv.schnait')}" alt="TSV Schnait 1911 e.V. – Startseite" width="216" height="256">
+    </a>
 
-    <div class="navbar-content">
-      <ul class="nav navbar-nav">
-        <f:for each="{items}" as="item" iteration="menuItemIterator">
-          <li class="dropdown">
-            <f:if condition="{item.subItems}">
-              <f:then>
-                <neos:link.node node="{item.node}">
-                  {item.label}
-                  <span class="caret"></span>
-                </neos:link.node>
+    <button class="tsv-nav__toggle" type="button" aria-expanded="false" aria-controls="tsv-nav-list">
+      <span class="tsv-nav__toggle-bars" aria-hidden="true"></span>
+      <span class="tsv-nav__toggle-label">Menü</span>
+    </button>
 
-                <f:render section="subList" arguments="{items: item.subItems}" />
-              </f:then>
-
-              <f:else>
-                <neos:link.node node="{item.node}">
-                  {item.label}
-                </neos:link.node>
-              </f:else>
-            </f:if>
-          </li>
-        </f:for>
-      </ul>
-    </div>
+    <ul class="tsv-nav__list" id="tsv-nav-list">
+      <f:for each="{items}" as="item">
+        <li class="tsv-nav__item tsv-nav__item--{item.state}{f:if(condition: item.subItems, then: ' has-children')}">
+          <neos:link.node node="{item.node}" class="tsv-nav__link">{item.label}</neos:link.node>
+          <f:if condition="{item.subItems}">
+            <button class="tsv-nav__subtoggle" type="button" aria-expanded="false" aria-label="Untermenü {item.label} öffnen"></button>
+            <f:render section="subList" arguments="{items: item.subItems, level: 2}" />
+          </f:if>
+        </li>
+      </f:for>
+    </ul>
   </nav>
 </f:section>
 
 
 <f:section name="subList">
-
-  <ul class="dropdown-menu multi-level">
-    <f:for each="{items}" as="item" iteration="iteration">
-
-      <f:if condition="{item.subItems}">
-        <f:then>
-          <li class="dropdown-submenu">
-            <neos:link.node node="{item.node}">
-              {item.label}
-            </neos:link.node>
-            <f:render section="thirdLevel" arguments="{items: item.subItems}" />
-          </li>
-          <f:if condition="{iteration.isLast}">
-            <f:then>
-            </f:then>
-            <f:else>
-              <li class="divider"></li>
-            </f:else>
-          </f:if>
-        </f:then>
-
-        <f:else>
-          <li>
-            <neos:link.node node="{item.node}">
-              {item.label}
-            </neos:link.node>
-          </li>
-          <f:if condition="{iteration.isLast}">
-            <f:then>
-            </f:then>
-            <f:else>
-              <li class="divider"></li>
-            </f:else>
-          </f:if>
-        </f:else>
-      </f:if>
-
-    </f:for>
-  </ul>
-
-
-</f:section>
-
-
-<f:section name="thirdLevel">
-  <ul class="dropdown-menu">
-
-    <f:for each="{items}" as="item" iteration="iteration">
-      <li>
-        <neos:link.node node="{item.node}">
-          {item.label}
-        </neos:link.node>
+  <ul class="tsv-nav__sub tsv-nav__sub--level{level}">
+    <f:for each="{items}" as="item">
+      <li class="tsv-nav__item tsv-nav__item--{item.state}{f:if(condition: item.subItems, then: ' has-children')}">
+        <neos:link.node node="{item.node}" class="tsv-nav__link">{item.label}</neos:link.node>
+        <f:if condition="{item.subItems}">
+          <button class="tsv-nav__subtoggle" type="button" aria-expanded="false" aria-label="Untermenü {item.label} öffnen"></button>
+          <f:render section="subList" arguments="{items: item.subItems, level: 3}" />
+        </f:if>
       </li>
-      <f:if condition="{iteration.isLast}">
-        <f:then>
-        </f:then>
-        <f:else>
-          <li class="divider"></li>
-        </f:else>
-      </f:if>
     </f:for>
-
   </ul>
-
 </f:section>

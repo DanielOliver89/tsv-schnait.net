@@ -1,34 +1,28 @@
 prototype(tsv.schnait:Component.Template.Default) < prototype(Neos.Fusion:Component) {
-    menu = tsv.schnait:MainMenu
-    breadcrumb = tsv.schnait:Breadcrumb
-    #content = ''
+    content = ''
+
+    impressumNode = ${q(site).children('[instanceof Neos.Neos:Document]').filter('[uriPathSegment="impressum"]').get(0)}
 
     renderer = afx`
-        <header>
-            <!-- Header content here -->
-        </header>
-        <main id="main">
-            <div id="wrapper">
-                <div class="navigation">
-                  <tsv.schnait:MainMenu />
-                </div>
-                <div class="content">
-                  <!--tsv.schnait:Breadcrumb /-->
-                  <tsv.schnait:Breadcrumb />
-                  {props.content}
-                </div>
-                <footer class="footer">
-                  <div class="row">
-                    <div class="col-sm-6" id="footerLinks">
-                        <a href="/impressum">Impressum</a>
+        <a class="tsv-skiplink" href="#main">Zum Inhalt springen</a>
+        <div id="wrapper">
+            <header class="navigation">
+                <tsv.schnait:MainMenu />
+            </header>
+            <main id="main" class="content">
+                <tsv.schnait:Breadcrumb />
+                {props.content}
+            </main>
+            <footer class="footer">
+                <div class="footer__inner">
+                    <div id="footerLinks">
+                        <Neos.Neos:NodeLink node={props.impressumNode} @if.hasNode={props.impressumNode}>Impressum</Neos.Neos:NodeLink>
                     </div>
-                    <div class="col-sm-6" id="footerRechts">
-                        <a href="/">© Turn- und Sportverein Schnait 1911 e.V.</a>
+                    <div id="footerRechts">
+                        <Neos.Neos:NodeLink node={site}>© Turn- und Sportverein Schnait 1911 e.V.</Neos.Neos:NodeLink>
                     </div>
-                  </div>
-                </footer>
-            </div>
-        </main>
+                </div>
+            </footer>
+        </div>
     `
 }
-
