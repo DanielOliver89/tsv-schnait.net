@@ -487,10 +487,9 @@ img {
         padding-left: calc(var(--tsv-gutter) + 32px);
     }
 
-    html.tsv-nav-open,
-    html.tsv-nav-open body {
-        overflow: hidden;
-    }
+    /* Bewusst KEINE Scroll-Sperre (overflow: hidden auf html/body) bei offenem Menü: Sie hebt position: sticky
+       der Kopfzeile auf – nach dem Scrollen läge das Menü dann unsichtbar oberhalb des Bildschirms und die Seite
+       wäre gesperrt. Das Panel scrollt selbst (max-height + overscroll-behavior). */
 }
 
 /* ---------- 5 Breadcrumb ---------- */

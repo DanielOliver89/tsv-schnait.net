@@ -31,7 +31,6 @@
 
         function setMenuOpen(open) {
             nav.classList.toggle('is-open', open);
-            document.documentElement.classList.toggle('tsv-nav-open', open);
             toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
             if (!open) {
                 closeSubmenus();
