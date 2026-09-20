@@ -1,5 +1,0 @@
-##
-# Constraint-supertype that makes contents available in columns
-#
-'tsv.schnait:Constraint.Column':
-  abstract: true
