@@ -129,6 +129,8 @@ img {
     background-color: var(--tsv-surface);
     padding: 0 var(--tsv-gutter) 32px;
     min-height: 60vh;
+    /* lange E-Mail-Adressen o. Ä. in schmalen Spalten umbrechen statt die Seite zu verbreitern */
+    overflow-wrap: break-word;
 }
 
 /* ---------- 4 Navigation ---------- */
@@ -752,14 +754,32 @@ figcaption {
 @media (min-width: 992px)  { .col-md-15 { width: 20%; float: left; } }
 @media (min-width: 1200px) { .col-lg-15 { width: 20%; float: left; } }
 
-/* Graue / blaue Spaltenzeilen als abgerundete Flächen */
+/* Graue / blaue Spaltenzeilen als abgerundete Flächen.
+   Der Bootstrap-Außenrand der .row (-15px) bleibt bewusst erhalten: Die Fläche ragt dadurch links und rechts
+   über den Text hinaus, ihr Inhalt steht aber bündig mit dem Fließtext darüber und darunter. */
 .typo3-neos-nodetypes-twocolumngrey,
 .typo3-neos-nodetypes-fourcolumngrey,
 .typo3-neos-nodetypes-twocolumnblue {
-    margin-left: 0;
-    margin-right: 0;
     margin-bottom: 10px;
     border-radius: var(--tsv-radius);
+}
+
+/* Auf dem Handy laufen die Flächen von Rand zu Rand */
+@media (max-width: 767px) {
+    .typo3-neos-nodetypes-twocolumngrey,
+    .typo3-neos-nodetypes-fourcolumngrey,
+    .typo3-neos-nodetypes-twocolumnblue {
+        margin-left: calc(-1 * var(--tsv-gutter));
+        margin-right: calc(-1 * var(--tsv-gutter));
+        border-radius: 0;
+    }
+
+    .typo3-neos-nodetypes-twocolumngrey > [class*="col-"],
+    .typo3-neos-nodetypes-fourcolumngrey > [class*="col-"],
+    .typo3-neos-nodetypes-twocolumnblue > [class*="col-"] {
+        padding-left: var(--tsv-gutter);
+        padding-right: var(--tsv-gutter);
+    }
 }
 
 .typo3-neos-nodetypes-twocolumngrey,
