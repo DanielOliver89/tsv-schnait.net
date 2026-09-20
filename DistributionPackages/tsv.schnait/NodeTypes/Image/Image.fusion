@@ -5,16 +5,43 @@ prototype(tsv.schnait:Image) < prototype(Neos.Neos:ContentComponent) {
     src = Neos.Neos:ImageUri {
         @if.hasAsset = ${this.asset}
         asset = ${q(node).property('image')}
+        maximumWidth = 1440
     }
+    srcset = Neos.Fusion:Join {
+        @if.hasAsset = ${q(node).property('image')}
+        @glue = ', '
+        small = Neos.Neos:ImageUri {
+            asset = ${q(node).property('image')}
+            maximumWidth = 480
+        }
+        small.@process.descriptor = ${value + ' 480w'}
+        medium = Neos.Neos:ImageUri {
+            asset = ${q(node).property('image')}
+            maximumWidth = 960
+        }
+        medium.@process.descriptor = ${value + ' 960w'}
+        large = Neos.Neos:ImageUri {
+            asset = ${q(node).property('image')}
+            maximumWidth = 1440
+        }
+        large.@process.descriptor = ${value + ' 1440w'}
+    }
+    sizes = '(min-width: 1200px) 1140px, 100vw'
     alt = ${q(node).property('alternativeText')}
     title = ${q(node).property('title')}
     hasCaption = ${q(node).property('hasCaption')}
     caption = Neos.Neos:Editable {
         property = 'caption'
     }
-    # Link-URI nur setzen wenn eine link property existiert und nicht leer ist
-    link = ${q(node).property('link') ? (String.indexOf(q(node).property('link'), '://') == -1 ? 'https://' + q(node).property('link') : q(node).property('link')) : null}
-    
+    # Link-URI aufloesen: der LinkEditor speichert node://<uuid> bzw. asset://<uuid>,
+    # daneben sind absolute URLs, interne Pfade und mailto:/tel: moeglich.
+    # Eingaben ohne Schema (z.B. "www.example.org") bekommen "https://" vorangestellt.
+    link = Neos.Neos:ConvertUris {
+        value = ${q(node).property('link')}
+        forceConversion = true
+        @process.normalizeUri = ${value ? (String.indexOf(value, '://') < 0 && !String.startsWith(value, '/') && !String.startsWith(value, '#') && !String.startsWith(value, 'mailto:') && !String.startsWith(value, 'tel:') ? 'https://' + value : value) : null}
+    }
+
     # Backend-Status weitergeben
     inBackend = ${node.context.inBackend}
 

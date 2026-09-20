@@ -2,6 +2,11 @@ prototype(tsv.schnait:Presentation.FancyImage) < prototype(Neos.Fusion:Component
     @styleguide.props.renderDummyImage = true
 
     src = null
+    srcset = null
+    sizes = null
+    width = null
+    height = null
+    href = null
     alt = null
     title = null
     class = 'tsv-schnait-fancyimage'
@@ -9,6 +14,7 @@ prototype(tsv.schnait:Presentation.FancyImage) < prototype(Neos.Fusion:Component
     gruppe = 'Fancybox'
     hasCaption = false
     caption = null
+    captionText = null
     renderDummyImage = false
 
     @if.hasSource = ${this.src || this.renderDummyImage}
@@ -16,11 +22,23 @@ prototype(tsv.schnait:Presentation.FancyImage) < prototype(Neos.Fusion:Component
     renderer = afx`
         <div class={props.class}>
             <figure>
-                <a href={props.src} class="fancybox" rel={props.gruppe} title={props.title}>
+                <a
+                    href={props.href || props.src}
+                    class="fancybox glightbox"
+                    data-gallery={props.gruppe}
+                    data-title={props.title ? props.title : props.captionText}
+                    title={props.title ? props.title : null}
+                >
                     <img
                         src={props.src || StaticResource.uri('Neos.Neos', 'Public/Images/dummy-image.svg')}
-                        alt={props.alt}
+                        srcset={props.srcset}
+                        sizes={props.srcset ? props.sizes : null}
+                        width={props.width}
+                        height={props.height}
+                        alt={props.alt ? props.alt : ''}
                         class={props.imageClass}
+                        loading="lazy"
+                        decoding="async"
                     />
                 </a>
                 <figcaption @if={props.hasCaption && props.caption}>

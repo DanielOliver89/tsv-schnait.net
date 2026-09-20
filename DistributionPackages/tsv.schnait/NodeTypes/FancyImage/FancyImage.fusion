@@ -2,9 +2,35 @@
 # "Image" element
 #
 prototype(tsv.schnait:FancyImage) < prototype(Neos.Neos:ContentComponent) {
+    # Vorschaubild (nicht mehr das Original) fuer die Kachel-Ansicht
     src = Neos.Neos:ImageUri {
         @if.hasAsset = ${this.asset}
         asset = ${q(node).property('image')}
+        maximumWidth = 480
+    }
+    srcset = Neos.Fusion:Join {
+        @if.hasAsset = ${q(node).property('image')}
+        @glue = ', '
+        small = Neos.Neos:ImageUri {
+            asset = ${q(node).property('image')}
+            maximumWidth = 480
+        }
+        small.@process.descriptor = ${value + ' 480w'}
+        large = Neos.Neos:ImageUri {
+            asset = ${q(node).property('image')}
+            maximumWidth = 960
+        }
+        large.@process.descriptor = ${value + ' 960w'}
+    }
+    sizes = '(min-width: 768px) 25vw, 50vw'
+    # Abmessungen des 480px-Thumbnails, damit der Browser den Platz reserviert
+    width = ${q(node).property('image') ? Neos.Media.Image.createThumbnail(q(node).property('image'), null, null, 480, null, 2560).width : null}
+    height = ${q(node).property('image') ? Neos.Media.Image.createThumbnail(q(node).property('image'), null, null, 480, null, 2560).height : null}
+    # Die Lightbox oeffnet eine auf 1920px begrenzte Variante statt des Originals
+    href = Neos.Neos:ImageUri {
+        @if.hasAsset = ${this.asset}
+        asset = ${q(node).property('image')}
+        maximumWidth = 1920
     }
     alt = ${q(node).property('alternativeText')}
     title = ${q(node).property('title')}
@@ -13,6 +39,8 @@ prototype(tsv.schnait:FancyImage) < prototype(Neos.Neos:ContentComponent) {
     caption = Neos.Neos:Editable {
         property = 'caption'
     }
+    # Reiner Text der Bildunterschrift als Fallback fuer data-title der Lightbox
+    captionText = ${q(node).property('hasCaption') && q(node).property('caption') ? String.trim(String.stripTags(q(node).property('caption'))) : null}
 
     renderDummyImage = ${node.context.inBackend}
 

@@ -1,5 +1,7 @@
 prototype(tsv.schnait:Presentation.Image) < prototype(Neos.Fusion:Component) {
     src = null
+    srcset = null
+    sizes = null
     alt = null
     title = null
     class = 'typo3-neos-nodetypes-image'
@@ -10,27 +12,41 @@ prototype(tsv.schnait:Presentation.Image) < prototype(Neos.Fusion:Component) {
     renderDummyImage = false
     inBackend = false
 
+    # Host eines absoluten http(s)-Links, sonst null
+    linkHost = ${this.link ? String.pregMatch(this.link, '/^https?:\\/\\/([^\\/?#]+)/') : null}
+    # Nur Links auf eine fremde Domain in einem neuen Tab oeffnen,
+    # interne node://- bzw. asset://-Links bleiben im selben Tab.
+    linkIsExternal = ${this.linkHost ? this.linkHost[1] != request.httpRequest.uri.host : false}
+
     @if.hasSource = ${this.src || this.renderDummyImage}
 
     renderer = afx`
         <figure class={props.class}>
-            <a @if={props.link && String.length(props.link) > 0 && !props.inBackend} 
-               href={props.link} 
-               target="_blank" 
-               rel="noopener noreferrer">
+            <a @if={props.link && !props.inBackend}
+               href={props.link}
+               target={props.linkIsExternal ? '_blank' : null}
+               rel={props.linkIsExternal ? 'noopener noreferrer' : null}>
                 <img
                     src={props.src || StaticResource.uri('Neos.Neos', 'Public/Images/dummy-image.svg')}
-                    title={props.title}
-                    alt={props.alt}
+                    srcset={props.srcset}
+                    sizes={props.srcset ? props.sizes : null}
+                    title={props.title ? props.title : null}
+                    alt={props.alt ? props.alt : ''}
                     class={props.imageClass}
+                    loading="lazy"
+                    decoding="async"
                 />
             </a>
-            <img 
-                @if={!props.link || String.length(props.link) == 0 || props.inBackend}
+            <img
+                @if={!props.link || props.inBackend}
                 src={props.src || StaticResource.uri('Neos.Neos', 'Public/Images/dummy-image.svg')}
-                title={props.title}
-                alt={props.alt}
+                srcset={props.srcset}
+                sizes={props.srcset ? props.sizes : null}
+                title={props.title ? props.title : null}
+                alt={props.alt ? props.alt : ''}
                 class={props.imageClass}
+                loading="lazy"
+                decoding="async"
             />
             <figcaption @if={props.hasCaption && props.caption}>
                 {props.caption}
